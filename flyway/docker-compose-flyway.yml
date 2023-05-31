@@ -1,0 +1,7 @@
+version: '3'
+services:
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://db:5432/postgres -schemas=myschema -user=postgres -password=P@ssw0rd -connectRetries=60 -placeholders.customer_schema=cust migrate
+    volumes:
+      - .:/flyway/sql

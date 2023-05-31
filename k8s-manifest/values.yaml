@@ -1,0 +1,16 @@
+#image:
+#  pullPolicy: Never
+airflow:
+  fernet_key: "JwlZPRVu0O_C12lfI-AxxbaJZLa9ZWhUBHUB81kKtE4="
+  image:
+    repository: test-python
+    tag: latest
+    pull_policy: IfNotPresent
+  dags:
+    persistence:
+      enabled: false
+    git:
+      url: https://github.com/svishal9/data-mesh-in-a-box
+      branch: master
+      subpath: airflow/dags
+      wait: 60

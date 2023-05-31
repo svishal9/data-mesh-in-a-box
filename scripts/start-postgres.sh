@@ -1,0 +1,1 @@
+docker compose -f flyway/docker-compose.yml up -d --remove-orphans

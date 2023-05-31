@@ -1,0 +1,1 @@
+pipenv run python -m app.com.thoughtworks.www.src.tiger_spark_app -c ~/output/aphrodite -o ~/output/aphrodite -e dev

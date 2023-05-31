@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+pytz = "*"
+pyspark = "*"
+apache-airflow = "*"
+apache-airflow-providers-docker = "*"
+pyspark-stubs = "==3.0.0.post3"
+sqlalchemy = "*"
+psycopg = {extras = ["binary"], version = "*"}
+pytest-postgresql = "*"
+apache-airflow-providers-cncf-kubernetes = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

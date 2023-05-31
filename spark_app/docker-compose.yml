@@ -1,0 +1,19 @@
+version: '3'
+services:
+#  flyway:
+#    image: flyway/flyway
+#    command: -url=jdbc:postgresql://db:5432/postgres -schemas=myschema -user=postgres -password=P@ssw0rd -connectRetries=60 migrate
+#    volumes:
+#      - .:/flyway/sql
+#    depends_on:
+#      - db
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

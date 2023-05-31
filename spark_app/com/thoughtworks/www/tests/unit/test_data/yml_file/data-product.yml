@@ -1,0 +1,12 @@
+'environment': 'test'
+'job_date': 'etl_date'
+'file_path': 'path_merchant_table'
+'is_csv_file': True
+'pg_host': 'pg_host'
+'pg_port': 'pg_port'
+'pg_db': 'pg_db'
+'pg_user': 'pg_user'
+'pg_password': 'pg_password'
+'pg_schema': 'pg_schema'
+'pg_table': 'pg_table'
+'pg_query_timeout': 30
