@@ -42,7 +42,7 @@ with DAG(dag_id=dag_id, default_args=default_args, schedule_interval="5 * * * *"
         bash_command='date',
     )
     t2 = KubernetesPodOperator(namespace='airflow',
-                               image="test-python:latest",
+                               image="localhost:5000/test-python:latest",
                                cmds=["python", "-c"],
                                arguments=["print('hello world')"],
                                labels={"foo": "bar"},
