@@ -43,8 +43,8 @@ with DAG(dag_id=dag_id, default_args=default_args, schedule_interval="5 * * * *"
     )
     t2 = KubernetesPodOperator(namespace='airflow',
                                image="localhost:5000/test-python:latest",
-                               cmds=["python", "-c"],
-                               arguments=["print('hello world')"],
+                               cmds=["/bin/bash", "-c"],
+                               arguments=["echo 'hello world'"],
                                labels={"foo": "bar"},
                                name="passing-test",
                                task_id="passing-task",
