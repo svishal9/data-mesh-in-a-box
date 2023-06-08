@@ -44,7 +44,11 @@ with DAG(dag_id=dag_id, default_args=default_args, schedule_interval="5 * * * *"
     t2 = KubernetesPodOperator(namespace='airflow',
                                image="localhost:5000/test-python:latest",
                                cmds=["/bin/bash", "-c"],
-                               arguments=["ls -la"],
+                               arguments=["""
+                               export AWS_ACCESS_KEY_ID=foobar
+                               export AWS_SECRET_ACCESS_KEY=foobar
+                               aws --endpoint-url=http://localhost:4566 s3 ls 
+                               """],
                                labels={"app": "spark"},
                                name="test-spark",
                                task_id="test-spark",
