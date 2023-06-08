@@ -44,7 +44,7 @@ with DAG(dag_id=dag_id, default_args=default_args, schedule_interval="5 * * * *"
     t2 = KubernetesPodOperator(namespace='airflow',
                                image="localhost:5000/test-python:latest",
                                cmds=["/bin/bash", "-c"],
-                               arguments=["./go.sh tests"],
+                               arguments=["ls -la"],
                                labels={"app": "spark"},
                                name="test-spark",
                                task_id="test-spark",
