@@ -49,7 +49,7 @@ with DAG(dag_id=dag_id, default_args=default_args, schedule_interval="5 * * * *"
                                export AWS_SECRET_ACCESS_KEY=foobar
                                # export NODE_PORT=$(kubectl get --namespace "default" -o jsonpath="{.spec.ports[0].nodePort}" services my-release-localstack)
                                # export NODE_IP=$(kubectl get nodes --namespace "default" -o jsonpath="{.items[0].status.addresses[0].address}")
-                               aws --endpoint-url=$ENV_LOCALSTACK_URL s3 ls 
+                               aws --endpoint-url=$ENV_LOCALSTACK_URL s3 ls test/ 
                                """],
                                labels={"app": "spark"},
                                name="test-spark",
